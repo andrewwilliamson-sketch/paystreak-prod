@@ -328,19 +328,9 @@
     .success p + p { margin-top: .5rem; }
     .success:focus { outline: none; }
 
-    /* ===== Trust ===== */
-    .trust-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 0 3.5rem; }
-    .trust-list li { padding: 1.6rem 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 28px 1fr; gap: 1rem; }
-    .trust-list svg { width: 22px; height: 22px; margin-top: .3rem; color: var(--gold-deep); }
-    .trust-list h3 { font-size: 1.35rem; }
-    .trust-list p { margin-top: .4rem; color: var(--muted); font-size: 1.05rem; }
-    .trust-list li.wide { border-left: 3px solid var(--gold-deep); padding-left: 1.25rem; background: var(--card); padding-right: 1.25rem; }
-    @media (min-width: 860px) {
-      .trust-list { grid-template-columns: 1fr 1fr; }
-      .trust-list li.wide { grid-column: 1 / -1; }
-    }
+    /* ===== About ===== */
     .person {
-      margin-top: 2.5rem; background: var(--ink); color: var(--on-ink); padding: clamp(1.75rem, 5vw, 3rem);
+      background: var(--ink); color: var(--on-ink); padding: clamp(1.75rem, 5vw, 3rem);
       display: grid; gap: 1.5rem;
     }
     .person h3 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); max-width: 22ch; }
@@ -415,7 +405,6 @@
         <a href="#data">What we look for</a>
         <a href="#fit">Who it's for</a>
         <a href="#how">How it works</a>
-        <a href="#trust">Security</a>
         <a href="#faq">Questions</a>
       </nav>
       <a class="btn btn-gold" href="#contact">Get in touch</a>
@@ -610,47 +599,9 @@
       </div>
     </section>
 
-    <!-- ========== 6. SECURITY ========== -->
-    <section class="section tint" id="trust" aria-labelledby="trust-title">
+    <!-- ========== 6. ABOUT ========== -->
+    <section class="section tint" id="about" aria-label="About Paystreak Data">
       <div class="wrap">
-        <p class="eyebrow">Security comes first</p>
-        <h2 class="h2" id="trust-title">How your company stays protected.</h2>
-        <p class="lede">All data is handled under strict contractual protections. The sole purpose is to help train and evaluate AI systems on realistic enterprise settings, not to replicate your business.</p>
-
-        <ul class="trust-list" role="list">
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
-            <div><h3>Sensitive information is scrubbed first.</h3><p>All confidential information is removed before any downstream use, and no customer information is ever exposed.</p></div>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 7h14M9 7V5h6v2M7 7l1 12h8l1-12"/></svg>
-            <div><h3>Originals are deleted after processing.</h3><p>Original datasets are retained only for processing, then deleted.</p></div>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-            <div><h3>Nothing is shared publicly.</h3><p>No data is published, and it's used only for the purposes written into your license.</p></div>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg>
-            <div><h3>You keep ownership.</h3><p>Your company retains ownership of its underlying data. Buyers license it for agreed uses, non-exclusive by default.</p></div>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 18L18 6"/></svg>
-            <div><h3>Not a copy of your business.</h3><p>The goal is never to replicate your business, products, customers, or competitive advantages.</p></div>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12h13M13 7l5 5-5 5"/></svg>
-            <div><h3>You approve every sample.</h3><p>Nothing goes to a buyer until you've reviewed it and signed.</p></div>
-          </li>
-          <li class="wide reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg>
-            <div>
-              <h3>Some data isn't a fit.</h3>
-              <p>Records covered by professional confidentiality or health privacy rules, such as privileged legal communications or patient records, need consent and legal review. Often they can't be sold at all. If something can't or shouldn't be sold, we'll tell you plainly.</p>
-            </div>
-          </li>
-        </ul>
-
         <div class="person reveal">
           <div>
             <p class="eyebrow">About Paystreak Data</p>
