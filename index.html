@@ -210,22 +210,22 @@
     @media (min-width: 860px) { .nav { display: flex; } }
 
     /* ===== Hero ===== */
-    .hero { padding: clamp(4.5rem, 12vw, 9rem) 0 clamp(4rem, 9vw, 7rem); border-bottom: 1px solid var(--ink-rule); }
-    .hero h1 { font-size: clamp(2.6rem, 7.4vw, 5.4rem); max-width: 15ch; letter-spacing: -.01em; }
+    .hero { padding: clamp(2rem, 6vh, 4.5rem) 0 clamp(2.5rem, 6vh, 4rem); border-bottom: 1px solid var(--ink-rule); }
+    .hero h1 { font-size: clamp(2.6rem, min(7.4vw, 8vh), 5.4rem); max-width: 15ch; letter-spacing: -.01em; }
     .hero h1 em { color: var(--gold); font-style: italic; }
-    .hero .lede { margin-top: 1.75rem; }
+    .hero .lede { margin-top: clamp(1rem, 2.5vh, 1.75rem); }
     .hero-grid { display: grid; gap: 3rem; }
     .anchor {
       border-top: 1px solid var(--ink-rule); padding-top: 1.5rem; align-self: end;
     }
     .anchor-figure { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.2rem); color: var(--gold); line-height: 1; white-space: nowrap; }
     .anchor-label { margin-top: .75rem; font-size: 1rem; color: var(--on-ink-muted); max-width: 22rem; }
-    .hero-actions { margin-top: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
+    .hero-actions { margin-top: clamp(1.5rem, 3.5vh, 2.5rem); display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
     .hero-note { margin-top: 1rem; font-size: .98rem; color: var(--on-ink-muted); }
     .hero-note strong { color: var(--on-ink); font-weight: 600; }
     .hero-foot {
-      margin-top: clamp(3rem, 7vw, 4.5rem); padding-top: 1.5rem; border-top: 1px solid var(--ink-rule);
-      font-size: 1rem; color: var(--on-ink-muted); max-width: 46rem;
+      margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--ink-rule);
+      font-size: 1rem; color: var(--on-ink-muted); max-width: 22rem;
     }
     .hero-foot strong { color: var(--on-ink); font-weight: 600; }
     @media (min-width: 900px) {
@@ -403,9 +403,9 @@
           <div class="anchor">
             <p class="anchor-figure">$20K&ndash;$5M</p>
             <p class="anchor-label">A typical range for a closed deal. It is a range, not a promise. Some datasets sell for less, and some don't sell at all.</p>
+            <p class="hero-foot"><strong>A brokerage, not a platform.</strong> Paystreak manages every deal from assessment to payment. Nothing to upload, no software to learn.</p>
           </div>
         </div>
-        <p class="hero-foot"><strong>A brokerage, not a platform.</strong> Paystreak manages every deal from assessment to payment. Nothing to upload, no software to learn.</p>
       </div>
     </section>
 
