@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paystreak Data | Boston Data Brokerage for Service Businesses</title>
-  <meta name="description" content="Paystreak Data is a Boston-based data brokerage. We help U.S. service businesses earn revenue by licensing redacted business records to vetted AI data-prep companies. No upfront cost.">
+  <title>Paystreak Data | Earn Revenue From Your Company's Operational Knowledge</title>
+  <meta name="description" content="Paystreak Data is a Boston-based data brokerage. We help operationally mature companies of 30 to 200 people earn revenue by licensing scrubbed SOPs, playbooks, knowledge bases, and workflow data to programs that train and evaluate AI systems. No upfront cost.">
   <link rel="canonical" href="https://paystreakdata.com/">
   <meta name="theme-color" content="#14120e">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Paystreak Data">
-  <meta property="og:title" content="Paystreak Data | The records only your business has are worth money">
-  <meta property="og:description" content="A Boston-based data brokerage for U.S. service businesses. Personal information redacted, non-exclusive by default, and no upfront cost.">
+  <meta property="og:title" content="Paystreak Data | How your company works is worth money">
+  <meta property="og:description" content="A Boston-based data brokerage for operationally mature companies. Sensitive information scrubbed, originals deleted after processing, you keep ownership, and no upfront cost.">
   <meta property="og:url" content="https://paystreakdata.com/">
   <meta property="og:image" content="https://paystreakdata.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Paystreak Data: the records only your business has are worth money.">
+  <meta property="og:image:alt" content="Paystreak Data: how your company works is worth money.">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon: three rock strata with a gold seam through the middle (the "pay streak"). -->
@@ -33,7 +33,7 @@
   "url": "https://paystreakdata.com/",
   "email": "contact@paystreakdata.com",
   "image": "https://paystreakdata.com/og-image.png",
-  "description": "Paystreak Data is a Boston-based data brokerage serving service businesses across the United States. We help law firms, contractors, agencies, clinics, and consultancies earn revenue from the records they already keep by licensing redacted business data to vetted AI data-prep companies.",
+  "description": "Paystreak Data is a Boston-based data brokerage serving operationally mature companies across the United States. We help technology companies, BPOs, recruiting firms, financial services, consulting, professional services, legal and compliance, healthcare administration, and logistics businesses earn revenue from their operational knowledge by licensing scrubbed internal documentation and workflow data to programs that train and evaluate AI systems.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Boston",
@@ -47,12 +47,14 @@
   "knowsAbout": [
     "Data brokerage",
     "AI training data",
+    "AI evaluation data",
+    "Enterprise workflow data",
     "Data licensing",
     "Data redaction"
   ],
   "audience": {
     "@type": "BusinessAudience",
-    "audienceType": "Service businesses: law firms, contractors, agencies, clinics, and consultancies"
+    "audienceType": "Operationally mature companies with 30 to 200 employees"
   }
 }
   </script>
@@ -71,10 +73,18 @@
     },
     {
       "@type": "Question",
+      "name": "Is my company a fit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The strongest fits have 30 to 200 employees, run on modern software tools, and have well-defined workflows that people execute repeatedly, with a real body of internal documentation behind them. Technology companies, BPOs, recruiting firms, financial services, consulting, professional services, legal and compliance, healthcare administration, and logistics businesses are all common examples. If you're close but not exact, ask anyway."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "What about client confidentiality?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Personal information is redacted before any buyer sees anything, and you approve every sample before it goes out. Privileged legal communications, patient records, and similar material need client consent and legal review, and are often off the table entirely. We recommend having your own lawyer review any contract before you sign it."
+        "text": "Sensitive and confidential information is scrubbed before any downstream use, no customer information is exposed, and you approve every sample before it goes out. Privileged legal communications, patient records, and similar material need consent and legal review, and are often off the table entirely. We recommend having your own lawyer review any contract before you sign it."
       }
     },
     {
@@ -82,7 +92,15 @@
       "name": "Who are the buyers, and what do they do with the data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Data-prep companies. They clean, label, and package data into training sets for companies that build AI systems. Each buyer is vetted before we introduce them, and permitted uses are written into the license you approve."
+        "text": "Vetted programs that train and evaluate AI systems on realistic enterprise settings. They aren't trying to replicate your business, products, customers, or competitive advantages. Each buyer is vetted before we introduce them, and permitted uses are written into the license you approve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What determines how much my data is worth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Five things: the size and volume of the dataset, the complexity of the workflows it captures, how unique your operational knowledge is, the quality of the data, and the domain expertise it represents. Your free assessment covers each one."
       }
     },
     {
@@ -254,7 +272,23 @@
     .example:last-child { border-bottom: 1px solid var(--line); }
     .example dt { font-family: var(--serif); font-size: 1.3rem; }
     .example dd { margin: .35rem 0 0; color: var(--muted); font-size: 1.05rem; }
+    .fit { list-style: none; padding: 0; margin: 1.75rem 0 0; display: grid; gap: .85rem; }
+    .fit li { display: grid; grid-template-columns: 22px 1fr; gap: .8rem; color: var(--text); }
+    .fit svg { width: 18px; height: 18px; margin-top: .3rem; color: var(--gold-deep); }
+    .industries-label { font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
+    @media (min-width: 640px) {
+      .examples.two-col { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; }
+      .examples.two-col .example:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+    }
     @media (min-width: 900px) { .who-grid { grid-template-columns: 5fr 6fr; gap: 5rem; } }
+
+    /* ===== Value ===== */
+    .factors { list-style: none; padding: 0; margin: 2.25rem 0 0; display: grid; gap: 0 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); }
+    .factor { border-top: 2px solid var(--gold); padding: 1.25rem 0 1.5rem; }
+    .factor-num { font-family: var(--serif); font-size: 1rem; color: var(--gold-deep); letter-spacing: .08em; }
+    .factor h3 { font-size: 1.35rem; margin-top: .5rem; }
+    .factor p { margin-top: .5rem; color: var(--muted); font-size: 1.02rem; }
+    .value-note { margin-top: 1.5rem; color: var(--muted); max-width: 44rem; }
 
     /* ===== How ===== */
     .steps { list-style: none; padding: 0; margin: 2.25rem 0 0; display: grid; gap: 2.5rem; }
@@ -274,14 +308,14 @@
     .field { display: grid; gap: .4rem; }
     .field label { font-weight: 600; font-size: 1rem; }
     .field .opt { font-weight: 400; color: var(--muted); }
-    .field input, .field textarea {
+    .field input, .field textarea, .field select {
       width: 100%; min-height: 50px; padding: .75rem .9rem; font: inherit; font-size: 1.05rem;
       color: var(--text); background: #fff; border: 1px solid var(--line); border-radius: 2px;
     }
     .field textarea { min-height: 140px; resize: vertical; }
-    .field input:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 1px; border-color: var(--gold-deep); }
-    .dark .field input, .dark .field textarea { background: var(--ink-2); color: var(--on-ink); border-color: #4a4438; }
-    .dark .field input:focus-visible, .dark .field textarea:focus-visible { outline-color: var(--gold); border-color: var(--gold); }
+    .field input:focus-visible, .field textarea:focus-visible, .field select:focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 1px; border-color: var(--gold-deep); }
+    .dark .field input, .dark .field textarea, .dark .field select { background: var(--ink-2); color: var(--on-ink); border-color: #4a4438; }
+    .dark .field input:focus-visible, .dark .field textarea:focus-visible, .dark .field select:focus-visible { outline-color: var(--gold); border-color: var(--gold); }
     .dark .field .opt { color: var(--on-ink-muted); }
     .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
@@ -342,6 +376,8 @@
     .email-line { margin-top: 2rem !important; padding-top: 1.5rem; border-top: 1px solid var(--ink-rule); }
     .email-line strong { display: block; color: var(--on-ink); font-family: var(--serif); font-size: clamp(1.15rem, 3.5vw, 1.5rem); font-weight: 400; margin-top: .25rem; overflow-wrap: anywhere; }
     .contact-form { display: grid; gap: 1.25rem; }
+    .field-row { display: grid; gap: 1.25rem; }
+    @media (min-width: 560px) { .field-row { grid-template-columns: 1fr 1fr; } }
     @media (min-width: 900px) { .contact-grid { grid-template-columns: 5fr 6fr; gap: 5rem; } }
 
     /* ===== Footer ===== */
@@ -377,7 +413,9 @@
       </a>
       <nav class="nav" aria-label="Main">
         <a href="#data">What we look for</a>
+        <a href="#fit">Who it's for</a>
         <a href="#how">How it works</a>
+        <a href="#trust">Security</a>
         <a href="#faq">Questions</a>
       </nav>
       <a class="btn btn-gold" href="#contact">Get in touch</a>
@@ -389,102 +427,125 @@
     <!-- ========== 1. HERO ========== -->
     <section class="hero dark" id="top" aria-labelledby="hero-title">
       <div class="wrap">
-        <p class="eyebrow">A data brokerage for service businesses</p>
+        <p class="eyebrow">A data brokerage for operationally mature companies</p>
         <div class="hero-grid">
           <div>
-            <h1 id="hero-title">The records only your business has are <em>worth money.</em></h1>
-            <p class="lede">Companies that build AI training data pay for real examples of professional work. We find those buyers, negotiate the terms, and make sure your clients' details stay out of it. You pay nothing unless a deal closes.</p>
+            <h1 id="hero-title">How your company works is <em>worth money.</em></h1>
+            <p class="lede">AI systems are trained and tested on realistic enterprise work: the SOPs, playbooks, and workflows your team runs every day. We find the programs that pay for it, negotiate the terms, and make sure your confidential and customer information stays out of it. You pay nothing unless a deal closes.</p>
             <div class="hero-actions">
               <a class="btn btn-gold" href="#contact">Get a free assessment</a>
-              <a class="text-link" href="#how">See how it works</a>
+              <a class="text-link" href="#fit">See if you're a fit</a>
             </div>
             <p class="hero-note"><strong>Paid within 7 days of a closed deal.</strong> No upfront fees, no retainer.</p>
           </div>
           <div class="anchor">
             <p class="anchor-figure">$20K&ndash;$5M</p>
             <p class="anchor-label">A typical range for a closed deal. It is a range, not a promise. Some datasets sell for less, and some don't sell at all.</p>
-            <p class="hero-foot"><strong>A brokerage, not a platform.</strong> Paystreak manages every deal from assessment to payment. Nothing to upload, no software to learn.</p>
+            <p class="hero-foot"><strong>A brokerage, not a platform.</strong> Paystreak manages every deal from assessment to payment. You keep ownership of your data throughout.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== 3. DATA WE'RE LOOKING FOR ========== -->
+    <!-- ========== 2. DATA WE'RE LOOKING FOR ========== -->
     <section class="section tint" id="data" aria-labelledby="data-title">
       <div class="wrap">
         <p class="eyebrow">What we look for</p>
-        <h2 class="h2" id="data-title">Ordinary records. Real work.</h2>
-        <p class="lede">These are the kinds of records buyers typically ask about. In every case, names and personal details are removed before anyone outside your business sees a thing.</p>
+        <h2 class="h2" id="data-title">The knowledge your team runs on.</h2>
+        <p class="lede">Many companies hold valuable operational intelligence without realizing it. These are the kinds of records buyers ask about. In every case, sensitive and confidential information is scrubbed before any downstream use.</p>
 
         <div class="cards">
           <article class="card reveal">
-            <h3>Messages</h3>
-            <p>Internal and client conversations that show how work actually gets done.</p>
+            <h3>Internal documentation and knowledge bases</h3>
+            <p>Wikis, help centers, process documentation, and the answers your team looks up every week.</p>
+            <ul class="badges" aria-label="Common sources"><li>Confluence</li><li>Notion</li><li>Guru</li><li>SharePoint</li></ul>
+          </article>
+          <article class="card reveal">
+            <h3>SOPs, playbooks, and templates</h3>
+            <p>Standard operating procedures, onboarding playbooks, checklists, and the operational frameworks behind them.</p>
+            <ul class="badges" aria-label="Common sources"><li>Google Drive</li><li>Process Street</li><li>Trainual</li></ul>
+          </article>
+          <article class="card reveal">
+            <h3>Project management workflows</h3>
+            <p>Projects, tickets, and task execution histories: every step between "we have a request" and "done."</p>
+            <ul class="badges" aria-label="Common sources"><li>Jira</li><li>Asana</li><li>Linear</li><li>Monday.com</li></ul>
+          </article>
+          <article class="card reveal">
+            <h3>Internal communications</h3>
+            <p>The threads, handoffs, and decisions that show how work actually gets coordinated.</p>
             <ul class="badges" aria-label="Common sources"><li>Slack</li><li>Teams</li><li>Gmail</li><li>Outlook</li></ul>
           </article>
           <article class="card reveal">
-            <h3>Documents</h3>
-            <p>Proposals, templates, procedures, reports, and the drafts that led to them.</p>
-            <ul class="badges" aria-label="Common sources"><li>Google Drive</li><li>Notion</li><li>SharePoint</li></ul>
-          </article>
-          <article class="card reveal">
-            <h3>Business records</h3>
-            <p>Pipelines, quotes, invoices, and the notes kept around them.</p>
-            <ul class="badges" aria-label="Common sources"><li>Salesforce</li><li>HubSpot</li><li>QuickBooks</li></ul>
-          </article>
-          <article class="card reveal">
-            <h3>Support tickets and projects</h3>
-            <p>Requests, fixes, and every step between "we have a problem" and "done."</p>
-            <ul class="badges" aria-label="Common sources"><li>Zendesk</li><li>Asana</li><li>ServiceNow</li></ul>
-          </article>
-          <article class="card reveal">
-            <h3>Photos and imagery</h3>
-            <p>Real conditions in the field: before, during, and after the work.</p>
-            <ul class="badges" aria-label="Common sources"><li>Service call photos</li><li>Drone imagery</li><li>Job site records</li></ul>
+            <h3>CRM and workflow metadata</h3>
+            <p>Pipeline stages, case flows, routing rules, and the business process artifacts your systems generate.</p>
+            <ul class="badges" aria-label="Common sources"><li>Salesforce</li><li>HubSpot</li><li>Zendesk</li><li>ServiceNow</li></ul>
           </article>
           <article class="card card-open reveal">
             <h3>Something else?</h3>
-            <p>If you keep a record that few other businesses have, it's worth a conversation. Tell us what it is and we'll tell you honestly whether anyone buys it.</p>
+            <p>If your team runs a workflow few other companies have documented, it's worth a conversation. Tell us what it is and we'll tell you honestly whether anyone buys it.</p>
             <a class="text-link" href="#contact">Tell us what you have</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ========== 4. WHO THIS IS FOR ========== -->
-    <section class="section" id="who" aria-labelledby="who-title">
+    <!-- ========== 3. WHO THIS IS FOR ========== -->
+    <section class="section" id="fit" aria-labelledby="fit-title">
       <div class="wrap who-grid">
         <div class="who-copy reveal">
           <p class="eyebrow">Who this is for</p>
-          <h2 class="h2" id="who-title">Owners with years of work on file.</h2>
-          <p class="lede" style="margin-bottom:1.5rem">For service businesses that want extra capital from records they already keep.</p>
-          <p class="strong">You don't need to be technical. You don't need to change how you work.</p>
-          <p>You need a few years of real records and the right to share them. We'll help you work out which parts you can share and which you can't.</p>
+          <h2 class="h2" id="fit-title">Companies that run on process.</h2>
+          <p class="lede">The strongest fits share five traits.</p>
+          <ul class="fit" role="list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>30 to 200 employees</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Strong operational maturity</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Significant internal documentation and process knowledge</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Active use of modern software tools</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Well-defined workflows that employees execute repeatedly</span></li>
+          </ul>
+          <p style="margin-top:1.75rem">You don't need to be technical, and you don't need to change how you work. We'll help you work out which parts you can share and which you can't.</p>
         </div>
         <div class="reveal">
-          <dl class="examples">
+          <p class="industries-label">Common examples</p>
+          <dl class="examples two-col">
             <div class="example">
-              <dt>A law firm</dt>
-              <dd>Templates, internal procedures, billing narratives, and filings already on the public record. Privileged client communications are generally off the table.</dd>
+              <dt>Technology companies</dt>
+              <dd>Engineering runbooks, release processes, and support escalation paths.</dd>
             </div>
             <div class="example">
-              <dt>A contractor</dt>
-              <dd>Job photos, quotes, change orders, schedules, and inspection notes.</dd>
+              <dt>BPOs and recruiting firms</dt>
+              <dd>Call scripts, QA rubrics, sourcing playbooks, and candidate pipelines.</dd>
             </div>
             <div class="example">
-              <dt>An agency</dt>
-              <dd>Briefs, drafts and revisions, project tickets, and campaign reports.</dd>
+              <dt>Financial services</dt>
+              <dd>Close checklists, review procedures, and onboarding workflows.</dd>
             </div>
             <div class="example">
-              <dt>A clinic</dt>
-              <dd>Scheduling, operations, and staff procedures. Patient records only with consent and legal review, and often not at all.</dd>
+              <dt>Consulting businesses</dt>
+              <dd>Engagement frameworks, deliverable templates, and project plans.</dd>
+            </div>
+            <div class="example">
+              <dt>Professional services</dt>
+              <dd>Intake processes, scoping templates, and delivery playbooks.</dd>
+            </div>
+            <div class="example">
+              <dt>Legal and compliance</dt>
+              <dd>Internal procedures, compliance checklists, and policy frameworks. Privileged communications are generally off the table.</dd>
+            </div>
+            <div class="example">
+              <dt>Healthcare administration</dt>
+              <dd>Scheduling, billing, and credentialing workflows. Never patient records without consent and legal review.</dd>
+            </div>
+            <div class="example">
+              <dt>Logistics and operations</dt>
+              <dd>Dispatch procedures, exception handling, and vendor workflows.</dd>
             </div>
           </dl>
         </div>
       </div>
     </section>
 
-    <!-- ========== 5. HOW IT WORKS ========== -->
+    <!-- ========== 4. HOW IT WORKS ========== -->
     <section class="section dark" id="how" aria-labelledby="how-title">
       <div class="wrap">
         <p class="eyebrow">How it works</p>
@@ -493,58 +554,99 @@
           <li class="step reveal">
             <p class="step-num" aria-hidden="true">01</p>
             <h3>Tell us what you have.</h3>
-            <p>A short conversation and a free assessment of what your data could be worth. No files change hands at this stage.</p>
+            <p>A short conversation and a free assessment of what your documentation and workflow data could be worth. No files change hands at this stage.</p>
           </li>
           <li class="step reveal">
             <p class="step-num" aria-hidden="true">02</p>
             <h3>We bring the buyers.</h3>
-            <p>We approach vetted data-prep companies and negotiate the terms on your behalf. Buyers see only redacted previews until a deal is signed.</p>
+            <p>We approach vetted programs that train and evaluate AI systems, and negotiate the terms on your behalf. Buyers see only scrubbed previews until a deal is signed.</p>
           </li>
           <li class="step reveal">
             <p class="step-num" aria-hidden="true">03</p>
             <h3>You get paid.</h3>
-            <p>The money goes directly to you, within 7 days of a closed deal. You keep 100% of your IP. The buyer gets a license to use the data, not ownership of it.</p>
+            <p>The money goes directly to you, within 7 days of a closed deal. You keep ownership of your underlying data. The buyer gets a license to use it, not ownership of it.</p>
           </li>
         </ol>
         <div class="custody reveal">
-          <p><strong>We never hold your data.</strong> It moves directly from you to the buyer, and only after you've signed.</p>
+          <p><strong>We never hold your data.</strong> It moves directly from you to the buyer, under contract, and only after you've signed.</p>
           <p>Paystreak earns an introduction fee only when a deal closes.</p>
         </div>
       </div>
     </section>
 
-    <!-- ========== 7. TRUST ========== -->
+    <!-- ========== 5. WHAT IT'S WORTH ========== -->
+    <section class="section" id="value" aria-labelledby="value-title">
+      <div class="wrap">
+        <p class="eyebrow">What it's worth</p>
+        <h2 class="h2" id="value-title">Five things set the price.</h2>
+        <p class="lede">Compensation can be significant. Buyers weigh the same five factors every time, and your free assessment walks through each one.</p>
+        <ol class="factors" role="list">
+          <li class="factor reveal">
+            <p class="factor-num" aria-hidden="true">01</p>
+            <h3>Size and volume</h3>
+            <p>How much documentation and history you have, and how many years it covers.</p>
+          </li>
+          <li class="factor reveal">
+            <p class="factor-num" aria-hidden="true">02</p>
+            <h3>Workflow complexity</h3>
+            <p>Multi-step processes with handoffs, decisions, and exceptions are worth more.</p>
+          </li>
+          <li class="factor reveal">
+            <p class="factor-num" aria-hidden="true">03</p>
+            <h3>Uniqueness</h3>
+            <p>Operational knowledge few other companies have written down.</p>
+          </li>
+          <li class="factor reveal">
+            <p class="factor-num" aria-hidden="true">04</p>
+            <h3>Data quality</h3>
+            <p>Current, consistent, and complete records that match how work really happens.</p>
+          </li>
+          <li class="factor reveal">
+            <p class="factor-num" aria-hidden="true">05</p>
+            <h3>Domain expertise</h3>
+            <p>The depth of specialist judgment your workflows capture.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== 6. SECURITY ========== -->
     <section class="section tint" id="trust" aria-labelledby="trust-title">
       <div class="wrap">
-        <p class="eyebrow">Your clients, your data, your terms</p>
-        <h2 class="h2" id="trust-title">How your business stays protected.</h2>
+        <p class="eyebrow">Security comes first</p>
+        <h2 class="h2" id="trust-title">How your company stays protected.</h2>
+        <p class="lede">All data is handled under strict contractual protections. The sole purpose is to help train and evaluate AI systems on realistic enterprise settings, not to replicate your business.</p>
 
         <ul class="trust-list" role="list">
           <li class="reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
-            <div><h3>Personal information comes out first.</h3><p>Names, contact details, and anything that identifies a person are redacted before anyone outside your business sees anything.</p></div>
+            <div><h3>Sensitive information is scrubbed first.</h3><p>All confidential information is removed before any downstream use, and no customer information is ever exposed.</p></div>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 7h14M9 7V5h6v2M7 7l1 12h8l1-12"/></svg>
+            <div><h3>Originals are deleted after processing.</h3><p>Original datasets are retained only for processing, then deleted.</p></div>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+            <div><h3>Nothing is shared publicly.</h3><p>No data is published, and it's used only for the purposes written into your license.</p></div>
           </li>
           <li class="reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg>
-            <div><h3>You keep 100% of your IP.</h3><p>Buyers license the data for agreed uses. They never own your records.</p></div>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M7 8h10M7 16h10M4 12h16"/></svg>
-            <div><h3>Non-exclusive by default.</h3><p>You're free to license the same dataset to more than one buyer, unless you choose an exclusive deal for a higher price.</p></div>
-          </li>
-          <li class="reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12h13M13 7l5 5-5 5"/></svg>
-            <div><h3>We never take custody.</h3><p>Your data never touches our servers. It goes directly from you to the buyer.</p></div>
+            <div><h3>You keep ownership.</h3><p>Your company retains ownership of its underlying data. Buyers license it for agreed uses, non-exclusive by default.</p></div>
           </li>
           <li class="reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 18L18 6"/></svg>
-            <div><h3>No upfront cost.</h3><p>You pay nothing for the assessment or the search for buyers. Our introduction fee applies only if a deal closes.</p></div>
+            <div><h3>Not a copy of your business.</h3><p>The goal is never to replicate your business, products, customers, or competitive advantages.</p></div>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12h13M13 7l5 5-5 5"/></svg>
+            <div><h3>You approve every sample.</h3><p>Nothing goes to a buyer until you've reviewed it and signed.</p></div>
           </li>
           <li class="wide reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg>
             <div>
               <h3>Some data isn't a fit.</h3>
-              <p>Records covered by professional confidentiality or health privacy rules, such as privileged legal communications or patient records, need client consent and legal review. Often they can't be sold at all. If something can't or shouldn't be sold, we'll tell you plainly.</p>
+              <p>Records covered by professional confidentiality or health privacy rules, such as privileged legal communications or patient records, need consent and legal review. Often they can't be sold at all. If something can't or shouldn't be sold, we'll tell you plainly.</p>
             </div>
           </li>
         </ul>
@@ -552,24 +654,24 @@
         <div class="person reveal">
           <div>
             <p class="eyebrow">About Paystreak Data</p>
-            <h3>A Boston data brokerage for service businesses.</h3>
-            <p style="margin-top:1rem">Paystreak Data is a Boston-based data brokerage serving service businesses across the United States. We help law firms, contractors, agencies, clinics, and consultancies earn revenue from the records they already keep by licensing redacted business data to vetted AI data-prep companies.</p>
+            <h3>A Boston data brokerage for companies that run on process.</h3>
+            <p style="margin-top:1rem">Paystreak Data is a Boston-based data brokerage serving operationally mature companies across the United States. We believe the organizations that helped build modern business workflows should share in the value created by the next generation of AI systems.</p>
             <p style="margin-top:1rem">There's no platform to upload to and no self-service portal. We handle the assessment, the buyer search, and the negotiation, and every client has a dedicated point of contact throughout the deal.</p>
           </div>
           <dl>
             <dt>Based in</dt><dd>Boston, Massachusetts</dd>
-            <dt>Serving</dt><dd>Service businesses across the United States</dd>
+            <dt>Serving</dt><dd>Companies of 30 to 200 people across the United States</dd>
             <dt>Email</dt><dd><a href="mailto:contact@paystreakdata.com">contact@paystreakdata.com</a></dd>
           </dl>
         </div>
       </div>
     </section>
 
-    <!-- ========== 8. FAQ ========== -->
+    <!-- ========== 7. FAQ ========== -->
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="wrap">
         <p class="eyebrow">Fair questions</p>
-        <h2 class="h2" id="faq-title">What a careful owner asks first.</h2>
+        <h2 class="h2" id="faq-title">What a careful operator asks first.</h2>
 
         <div class="faq">
           <details>
@@ -579,15 +681,27 @@
             </div>
           </details>
           <details>
+            <summary>Is my company a fit?</summary>
+            <div class="answer">
+              <p>The strongest fits have 30 to 200 employees, run on modern software tools, and have well-defined workflows that people execute repeatedly, with a real body of internal documentation behind them. Technology companies, BPOs, recruiting firms, financial services, consulting, professional services, legal and compliance, healthcare administration, and logistics businesses are all common examples. If you're close but not exact, ask anyway.</p>
+            </div>
+          </details>
+          <details>
             <summary>What about client confidentiality?</summary>
             <div class="answer">
-              <p>Personal information is redacted before any buyer sees anything, and you approve every sample before it goes out. Privileged legal communications, patient records, and similar material need client consent and legal review, and are often off the table entirely. We recommend having your own lawyer review any contract before you sign it.</p>
+              <p>Sensitive and confidential information is scrubbed before any downstream use, no customer information is exposed, and you approve every sample before it goes out. Privileged legal communications, patient records, and similar material need consent and legal review, and are often off the table entirely. We recommend having your own lawyer review any contract before you sign it.</p>
             </div>
           </details>
           <details>
             <summary>Who are the buyers, and what do they do with the data?</summary>
             <div class="answer">
-              <p>Data-prep companies. They clean, label, and package data into training sets for companies that build AI systems. Each buyer is vetted before we introduce them, and permitted uses are written into the license you approve.</p>
+              <p>Vetted programs that train and evaluate AI systems on realistic enterprise settings. They aren't trying to replicate your business, products, customers, or competitive advantages. Each buyer is vetted before we introduce them, and permitted uses are written into the license you approve.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What determines how much my data is worth?</summary>
+            <div class="answer">
+              <p>Five things: the size and volume of the dataset, the complexity of the workflows it captures, how unique your operational knowledge is, the quality of the data, and the domain expertise it represents. Your free assessment covers each one.</p>
             </div>
           </details>
           <details>
@@ -600,14 +714,14 @@
       </div>
     </section>
 
-    <!-- ========== 9. FINAL CTA + CONTACT ========== -->
+    <!-- ========== 8. FINAL CTA + CONTACT ========== -->
     <section class="section dark" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-grid">
         <div class="contact-copy">
           <p class="eyebrow">Next step</p>
           <h2 class="h2" id="contact-title">Request a free assessment.</h2>
           <p class="lede" style="margin-bottom:1.5rem">No cost and no obligation.</p>
-          <p>Tell us a little about your business and the records you keep. We'll reply by email, tell you whether we think there's a buyer, and explain how it would work.</p>
+          <p>Tell us a little about your company and the documentation and workflows your team runs on. We'll reply by email, tell you whether we think there's a buyer, and explain how it would work.</p>
           <p class="email-line">Prefer email?<strong><a href="mailto:contact@paystreakdata.com">contact@paystreakdata.com</a></strong></p>
         </div>
 
@@ -625,11 +739,38 @@
               <input id="c-company" name="company" type="text" autocomplete="organization" required>
             </div>
             <div class="field">
-              <label for="c-email">Email</label>
+              <label for="c-email">Work email</label>
               <input id="c-email" name="email" type="email" autocomplete="email" required>
             </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="c-size">Company size</label>
+                <select id="c-size" name="company_size" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Under 30 employees</option>
+                  <option>30 to 75 employees</option>
+                  <option>76 to 200 employees</option>
+                  <option>Over 200 employees</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="c-industry">Industry</label>
+                <select id="c-industry" name="industry" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Technology</option>
+                  <option>BPO or recruiting</option>
+                  <option>Financial services</option>
+                  <option>Consulting</option>
+                  <option>Professional services</option>
+                  <option>Legal and compliance</option>
+                  <option>Healthcare administration</option>
+                  <option>Logistics and operations</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
             <div class="field">
-              <label for="c-data">What data do you have? <span class="opt">A sentence or two is plenty.</span></label>
+              <label for="c-data">What documentation and workflows do you have? <span class="opt">A sentence or two is plenty, e.g. "SOPs in Notion, 4 years of Jira history."</span></label>
               <textarea id="c-data" name="data_description" required></textarea>
             </div>
             <div>
@@ -646,7 +787,7 @@
     </section>
   </main>
 
-  <!-- ========== 10. FOOTER ========== -->
+  <!-- ========== 9. FOOTER ========== -->
   <footer class="site-footer">
     <div class="wrap">
       <p>&copy; <span id="year">2026</span> Paystreak Data, Boston, MA</p>
