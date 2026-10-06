@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paystreak Data</title>
+  <meta name="description" content="Paystreak Data. Coming soon.">
+</head>
+<body>
+  <p>Paystreak Data</p>
+
+  <form name="notify" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="notify">
+    <p hidden>
+      <label>Leave this empty: <input name="bot-field"></label>
+    </p>
+    <p>
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" autocomplete="email" required>
+      <button type="submit">Notify me</button>
+    </p>
+  </form>
+</body>
+</html>
