@@ -148,11 +148,11 @@
     .hero-actions { margin-top: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
     .hero-note { margin-top: 1rem; font-size: .98rem; color: var(--on-ink-muted); }
     .hero-note strong { color: var(--on-ink); font-weight: 600; }
-    .handshake {
+    .hero-foot {
       margin-top: clamp(3rem, 7vw, 4.5rem); padding-top: 1.5rem; border-top: 1px solid var(--ink-rule);
       font-size: 1rem; color: var(--on-ink-muted); max-width: 46rem;
     }
-    .handshake strong { color: var(--on-ink); font-weight: 600; }
+    .hero-foot strong { color: var(--on-ink); font-weight: 600; }
     @media (min-width: 900px) {
       .hero-grid { grid-template-columns: 1fr 320px; gap: 3.5rem; }
       .anchor { border-top: 0; border-left: 1px solid var(--ink-rule); padding: 0 0 0 2rem; }
@@ -375,7 +375,7 @@
             <p class="anchor-label">A typical range for a closed deal. It is a range, not a promise. Some datasets sell for less, and some don't sell at all.</p>
           </div>
         </div>
-        <p class="handshake"><strong>A named contact, not a platform.</strong> One Paystreak advisor handles your deal from the first call to the final payment, and you can always reach them by phone.</p>
+        <p class="hero-foot"><strong>A brokerage, not a platform.</strong> Paystreak manages every deal from assessment to payment. Nothing to upload, no software to learn.</p>
       </div>
     </section>
 
@@ -519,7 +519,7 @@
               <legend>How many people work in your company?</legend>
               <p class="q-hint">Including you.</p>
               <div class="options two">
-                <label class="option"><input type="radio" name="size" value="solo"><span>Just me</span></label>
+                <label class="option"><input type="radio" name="size" value="solo"><span>Owner only</span></label>
                 <label class="option"><input type="radio" name="size" value="2-10"><span>2&ndash;10</span></label>
                 <label class="option"><input type="radio" name="size" value="11-50"><span>11&ndash;50</span></label>
                 <label class="option"><input type="radio" name="size" value="51-200"><span>51&ndash;200</span></label>
@@ -577,7 +577,7 @@
 
             <div class="result-cta">
               <h4>Want a real number?</h4>
-              <p>Leave your email and an advisor will follow up with a proper assessment. No obligation, and we won't add you to a mailing list.</p>
+              <p>Leave your email and we'll follow up with a proper assessment. No obligation, and we won't add you to a mailing list.</p>
 
               <!-- Netlify form: "estimate". The hidden fields carry the quiz answers so you see them with the email.
                    They must exist here in the static HTML so Netlify registers them at deploy time. -->
@@ -594,12 +594,12 @@
                   <label for="estimate-email">Email</label>
                   <input id="estimate-email" type="email" name="email" autocomplete="email" required>
                 </div>
-                <button type="submit" class="btn btn-ink">Request my assessment</button>
+                <button type="submit" class="btn btn-ink">Request an assessment</button>
                 <p class="form-status" role="status" aria-live="polite" style="grid-column:1/-1"></p>
               </form>
               <div class="success" data-success hidden tabindex="-1">
                 <p>Thank you. We have your answers.</p>
-                <p>An advisor will be in touch within <span class="ph">[CONFIRM: reply time, e.g. one business day]</span>.</p>
+                <p>We'll be in touch within <span class="ph">[CONFIRM: reply time, e.g. one business day]</span>.</p>
               </div>
             </div>
 
@@ -651,14 +651,14 @@
 
         <div class="person reveal">
           <div>
-            <p class="eyebrow">Who you'll deal with</p>
-            <h3>One advisor, start to finish.</h3>
-            <p style="margin-top:1rem">There's no platform to upload to and no call center. Every client works with a named Paystreak advisor who handles the assessment, the buyers, and the terms, and who answers the phone.</p>
+            <p class="eyebrow">Working with Paystreak</p>
+            <h3>Full-service brokerage, start to finish.</h3>
+            <p style="margin-top:1rem">There's no platform to upload to and no self-service portal. Paystreak handles the assessment, the buyer search, and the negotiation, and every client has a dedicated point of contact throughout the deal.</p>
             <p style="margin-top:1rem"><span class="ph">[CONFIRM: one or two lines about the company, e.g. where you are based and the industries you serve]</span></p>
           </div>
           <dl>
-            <dt>Your advisor</dt><dd><span class="ph">[YOUR NAME]</span></dd>
-            <dt>Direct line</dt><dd><span class="ph">[PHONE NUMBER]</span></dd>
+            <dt>Office hours</dt><dd><span class="ph">[CONFIRM: e.g. Mon&ndash;Fri, 9am&ndash;5pm ET]</span></dd>
+            <dt>Phone</dt><dd><span class="ph">[PHONE NUMBER]</span></dd>
             <dt>Email</dt><dd><span class="ph">[EMAIL ADDRESS]</span></dd>
           </dl>
         </div>
@@ -680,14 +680,14 @@
             </div>
           </details>
           <details>
-            <summary>How much of my time does this take?</summary>
+            <summary>How much time does this take?</summary>
             <div class="answer">
               <p>The first conversation is 15 minutes. If there's a fit, expect roughly <span class="ph">[CONFIRM: typical total hours of the owner's time]</span> spread over the deal, mostly to answer questions and approve redacted samples.</p>
               <p>We do the buyer search, the back-and-forth, and the paperwork.</p>
             </div>
           </details>
           <details>
-            <summary>What about my clients' confidentiality?</summary>
+            <summary>What about client confidentiality?</summary>
             <div class="answer">
               <p>Personal information is redacted before any buyer sees anything, and you approve every sample before it goes out. Privileged legal communications, patient records, and similar material need client consent and legal review, and are often off the table entirely.</p>
               <p>We recommend having your own lawyer review any contract before you sign it.</p>
@@ -701,7 +701,7 @@
             </div>
           </details>
           <details>
-            <summary>What if I change my mind?</summary>
+            <summary>What if you change your mind?</summary>
             <div class="answer">
               <p>Until you sign, you can walk away at any point, for any reason, at no cost. Once a deal is signed, the contract terms apply: <span class="ph">[CONFIRM: what happens if the owner wants out after signing]</span>.</p>
             </div>
@@ -723,7 +723,7 @@
           <p class="eyebrow">Next step</p>
           <h2 class="h2" id="contact-title">Book a 15-minute intro call.</h2>
           <p class="lede" style="margin-bottom:1.5rem">No pitch deck and no obligation.</p>
-          <p>Tell us a little about your business and the records you keep. An advisor will call you back within <span class="ph">[CONFIRM: reply time]</span>, tell you whether we think there's a buyer, and explain exactly how it would work.</p>
+          <p>Tell us a little about your business and the records you keep. We'll call you back within <span class="ph">[CONFIRM: reply time]</span>, tell you whether we think there's a buyer, and explain exactly how it would work.</p>
           <p class="phone-line">Prefer to call now?<strong><span class="ph">[PHONE NUMBER]</span></strong></p>
         </div>
 
@@ -755,7 +755,7 @@
           </form>
           <div class="success" data-success hidden tabindex="-1">
             <p>Thank you. We have your message.</p>
-            <p>An advisor will call or email you within <span class="ph">[CONFIRM: reply time]</span>. Nothing else happens until we've spoken.</p>
+            <p>We'll call or email you within <span class="ph">[CONFIRM: reply time]</span>. Nothing else happens until we've spoken.</p>
           </div>
         </div>
       </div>
@@ -880,7 +880,7 @@
       progressBar.setAttribute('aria-valuenow', i + 1);
       progressFill.style.width = ((i + 1) / steps.length * 100) + '%';
       backBtn.hidden = i === 0;
-      nextBtn.textContent = i === steps.length - 1 ? 'See my estimate' : 'Next';
+      nextBtn.textContent = i === steps.length - 1 ? 'See the estimate' : 'Next';
       errorEl.textContent = '';
       if (moveFocus) {
         var checked = steps[i].querySelector('input:checked');
