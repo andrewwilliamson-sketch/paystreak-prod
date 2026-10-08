@@ -16,6 +16,7 @@ import os
 import sys
 
 import uharfbuzz as hb
+from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
@@ -187,8 +188,8 @@ def mark_group(key, scheme, x=0, y=0, s=1.0):
 # ---------------------------------------------------------------- type
 
 def text_path(font_file, text, size, tracking=0.0, features=None):
-    """Shape `text` with HarfBuzz and return (svg path d, width, cap height).
-    Coordinates: baseline at y=0, y grows downwards."""
+    """Shape `text` with HarfBuzz and return (svg path d, width, cap height,
+    descent below the baseline). Coordinates: baseline at y=0, y grows down."""
     blob = hb.Blob.from_file_path(font_file)
     face = hb.Face(blob)
     font = hb.Font(face)
@@ -203,6 +204,7 @@ def text_path(font_file, text, size, tracking=0.0, features=None):
     order = tt.getGlyphOrder()
     scale = size / upem
     pen = SVGPathPen(gs)
+    bounds = BoundsPen(gs)
     x = 0.0
     track = tracking * upem
     n = len(buf.glyph_infos)
@@ -211,9 +213,12 @@ def text_path(font_file, text, size, tracking=0.0, features=None):
         tp = TransformPen(pen, (scale, 0, 0, -scale,
                                 (x + pos.x_offset) * scale, -pos.y_offset * scale))
         gs[name].draw(tp)
+        gs[name].draw(TransformPen(bounds, (scale, 0, 0, -scale,
+                                            (x + pos.x_offset) * scale, -pos.y_offset * scale)))
         x += pos.x_advance + (track if i < n - 1 else 0)
     cap = tt["OS/2"].sCapHeight * scale
-    return pen.getCommands(), x * scale, cap
+    descent = max(bounds.bounds[3], 0) if bounds.bounds else 0
+    return pen.getCommands(), x * scale, cap, descent
 
 
 def fonts():
@@ -232,7 +237,7 @@ def lockup(key, scheme):
     if key == "v1":
         # Mark 48 tall; Caslon cap height aligned to the mark's outer beds.
         size = 46
-        d, w, cap = text_path(F["caslon"], "Paystreak Data", size, tracking=0.01)
+        d, w, cap, desc = text_path(F["caslon"], "Paystreak Data", size, tracking=0.01)
         mark_h = 48
         gap = 20
         base = (mark_h + cap) / 2  # optically centre caps on mark
@@ -240,10 +245,10 @@ def lockup(key, scheme):
         width = tx + w
         body = (mark_group(key, scheme) +
                 f'<path fill="{ink}" transform="translate({f(tx)} {f(base)})" d="{d}"/>')
-        return width, mark_h, body
+        return width, max(mark_h, base + desc), body
     if key == "v2":
         size = 40
-        d, w, cap = text_path(F["inter"], "Paystreak Data", size, tracking=-0.012)
+        d, w, cap, desc = text_path(F["inter"], "Paystreak Data", size, tracking=-0.012)
         mark_h = 48
         gap = 18
         base = (mark_h + cap) / 2
@@ -251,12 +256,12 @@ def lockup(key, scheme):
         width = tx + w
         body = (mark_group(key, scheme) +
                 f'<path fill="{ink}" transform="translate({f(tx)} {f(base)})" d="{d}"/>')
-        return width, mark_h, body
+        return width, max(mark_h, base + desc), body
     if key == "v3":
         # Stacked, tracked capitals: PAYSTREAK over DATA, private-bank style.
         mark_h = 56
-        d1, w1, cap1 = text_path(F["sserif"], "PAYSTREAK", 36, tracking=0.11)
-        d2, w2, cap2 = text_path(F["sserif"], "DATA", 17, tracking=0.42)
+        d1, w1, cap1, _ = text_path(F["sserif"], "PAYSTREAK", 36, tracking=0.11)
+        d2, w2, cap2, _ = text_path(F["sserif"], "DATA", 17, tracking=0.42)
         line_gap = 10
         block = cap1 + line_gap + cap2
         top = (mark_h - block) / 2
