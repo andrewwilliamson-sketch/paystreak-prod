@@ -246,12 +246,22 @@
     .anchor-figure { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.2rem); color: var(--gold); line-height: 1; white-space: nowrap; }
     .anchor-label { margin-top: .75rem; font-size: 1rem; color: var(--on-ink-muted); max-width: 22rem; }
     .hero-actions { margin-top: clamp(1.5rem, 3.5vh, 2.5rem); display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
-    .hero-start { gap: .75rem; max-width: 34rem; align-items: stretch; }
-    .hero-start input { flex: 1 1 15rem; min-width: 0; min-height: 48px; padding: .65rem 1rem; font: 400 1.05rem/1.2 var(--sans); border-radius: 2px; border: 1px solid #4a4438; background: var(--ink-2); color: var(--on-ink); }
-    .hero-start input::placeholder { color: var(--on-ink-muted); }
-    .hero-start input:focus-visible { outline: 3px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
-    .hero-start .btn { flex: 0 0 auto; }
-    @media (max-width: 479px) { .hero-start .btn { flex: 1 1 100%; } }
+    /* ===== Assessment pop-up ===== */
+    .modal { width: min(40rem, calc(100% - 2rem)); max-height: calc(100% - 2rem); margin: auto; padding: 0; border: 1px solid #4a4438; border-top: 3px solid var(--gold); background: var(--ink); color: var(--on-ink); overflow: auto; }
+    .modal::backdrop { background: rgba(10, 9, 7, .72); }
+    .modal-body { padding: clamp(1.5rem, 4vw, 2.25rem); }
+    .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .modal-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 4vw, 2rem); line-height: 1.15; }
+    .modal-head p { margin-top: .5rem; color: var(--on-ink-muted); }
+    .modal-close { flex: 0 0 auto; width: 44px; height: 44px; display: grid; place-items: center; background: none; border: 1px solid #4a4438; color: var(--on-ink); font-size: 1.5rem; line-height: 1; cursor: pointer; border-radius: 2px; }
+    .modal-close:hover { border-color: var(--gold); }
+    @media (max-width: 479px) { .modal { width: 100%; max-width: 100%; height: 100%; max-height: 100%; border: 0; border-top: 3px solid var(--gold); } }
+    @media (prefers-reduced-motion: no-preference) {
+      .modal[open] { animation: modal-in .2s ease-out; }
+      @keyframes modal-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    }
+    html.modal-open { overflow: hidden; }
+    [hidden] { display: none !important; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
     .hero-note { margin-top: 1rem; font-size: .98rem; color: var(--on-ink-muted); }
     .hero-note strong { color: var(--on-ink); font-weight: 600; }
@@ -434,12 +444,10 @@
           <div>
             <h1 id="hero-title">How your company works is <em>worth money.</em></h1>
             <p class="lede">AI systems are trained and tested on realistic enterprise work: the SOPs, playbooks, and workflows your team runs every day. We find the programs that pay for it and negotiate the terms on your behalf. You pay nothing unless a deal closes.</p>
-            <!-- Quick start: the email carries into the full form below, so visitors never type it twice. -->
-            <form class="hero-actions hero-start" action="#contact" data-quick-start>
-              <label class="sr-only" for="q-email">Work email</label>
-              <input id="q-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
-              <button type="submit" class="btn btn-gold">Get a free assessment</button>
-            </form>
+            <div class="hero-actions">
+              <!-- Opens the assessment form in a pop-up. Without JS it jumps to #contact. -->
+              <a class="btn btn-gold" href="#contact" data-open-assessment aria-haspopup="dialog">Get a free assessment</a>
+            </div>
             <p class="hero-note">Takes about a minute. No upfront fees, no retainer.</p>
           </div>
           <div class="anchor">
@@ -754,6 +762,80 @@
     </section>
   </main>
 
+  <!-- ========== ASSESSMENT POP-UP ==========
+       Opened only by the hero "Get a free assessment" button. Posts as the
+       same Netlify "contact" form declared in the contact section. -->
+  <dialog class="modal dark" id="assessment" aria-labelledby="assessment-title">
+    <div class="modal-body">
+      <div class="modal-head">
+        <div>
+          <h2 id="assessment-title">Request a free assessment.</h2>
+          <p>Takes about a minute. No cost and no obligation.</p>
+        </div>
+        <button type="button" class="modal-close" data-close-assessment aria-label="Close">&times;</button>
+      </div>
+      <div>
+        <form class="contact-form" name="contact" method="POST" action="/thanks.html" data-ajax-form>
+          <input type="hidden" name="form-name" value="contact">
+          <div class="field-row">
+            <div class="field">
+              <label for="m-name">Your name</label>
+              <input id="m-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="m-company">Company</label>
+              <input id="m-company" name="company" type="text" autocomplete="organization" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="m-email">Work email</label>
+            <input id="m-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="m-size">Company size</label>
+              <select id="m-size" name="company_size" required>
+                <option value="" selected disabled>Select one</option>
+                <option>1 to 10 employees</option>
+                <option>11 to 50 employees</option>
+                <option>51 to 250 employees</option>
+                <option>251 to 1,000 employees</option>
+                <option>Over 1,000 employees</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="m-industry">Industry</label>
+              <select id="m-industry" name="industry" required>
+                <option value="" selected disabled>Select one</option>
+                <option>Technology</option>
+                <option>BPO or recruiting</option>
+                <option>Financial services</option>
+                <option>Consulting</option>
+                <option>Professional services</option>
+                <option>Legal and compliance</option>
+                <option>Healthcare administration</option>
+                <option>Logistics and operations</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="m-data">What documentation and workflows do you have? <span class="opt">A sentence or two is plenty, e.g. "SOPs in Notion, 4 years of Jira history."</span></label>
+            <textarea id="m-data" name="data_description" required></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-gold">Request an assessment</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+        <div class="success" data-success hidden tabindex="-1">
+          <p>Thank you. We have your message.</p>
+          <p>We'll be in touch by email shortly. Nothing else happens until we've spoken.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
   <!-- ========== 9. FOOTER ========== -->
   <footer class="site-footer">
     <div class="wrap">
@@ -805,21 +887,32 @@
     }
 
     /* =========================================================
-       QUICK START
-       The hero email box hands off to the full contact form:
-       the email is carried over and focus lands on the next
-       empty field. Without JS it simply jumps to #contact.
+       ASSESSMENT POP-UP
+       Only the hero "Get a free assessment" button opens it. If the
+       browser lacks <dialog>, the link falls through to #contact.
        ========================================================= */
-    document.querySelectorAll('form[data-quick-start]').forEach(function (quick) {
-      quick.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var email = quick.querySelector('input[type="email"]');
-        if (!quick.checkValidity()) { quick.reportValidity(); return; }
-        var main = document.getElementById('c-email');
-        if (main) main.value = email.value.trim();
-        goTo(document.getElementById('contact'));
+    var modal = document.getElementById('assessment');
+    if (modal && typeof modal.showModal === 'function') {
+      var opener = null;
+      document.querySelectorAll('[data-open-assessment]').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          opener = btn;
+          document.documentElement.classList.add('modal-open');
+          modal.showModal();
+          var first = modal.querySelector('form:not([hidden]) input:not([type="hidden"])');
+          (first || modal.querySelector('[data-close-assessment]')).focus();
+        });
       });
-    });
+      modal.querySelector('[data-close-assessment]').addEventListener('click', function () { modal.close(); });
+      // A click on the dimmed backdrop closes it.
+      modal.addEventListener('click', function (e) { if (e.target === modal) modal.close(); });
+      modal.addEventListener('close', function () {
+        document.documentElement.classList.remove('modal-open');
+        if (opener) opener.focus();
+      });
+    }
 
     /* =========================================================
        SCROLL ANIMATIONS
