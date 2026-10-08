@@ -20,8 +20,9 @@
   <meta property="og:image:alt" content="Paystreak Data: the records only your business has are worth money.">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Favicon: three rock strata with a gold seam through the middle (the "pay streak"). -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2314120e'/%3E%3Cpath d='M6 11.5L26 7.5M6 25L26 21' stroke='%23615a4c' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M6 18.5L26 14.5' stroke='%23c9a35a' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <!-- Favicon: the V1 "strata" mark (brand/logo/v1-strata): rock beds cut by one gold seam, the pay streak. -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- Structured data for search engines and AI assistants. Keep the FAQ text in sync with the FAQ section. -->
   <script type="application/ld+json">
@@ -202,7 +203,13 @@
     }
     .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); gap: 1rem; }
     .brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; font-family: var(--serif); font-size: 1.35rem; letter-spacing: .01em; }
-    .brand svg { width: 26px; height: 26px; }
+    .brand svg { width: 26px; height: 26px; flex-shrink: 0; }
+    .brand, .site-header .btn { white-space: nowrap; }
+    @media (max-width: 380px) {
+      .brand { font-size: 1.15rem; gap: .5rem; }
+      .brand svg { width: 22px; height: 22px; }
+      .site-header .btn { padding: .5rem .8rem; }
+    }
     .nav { display: none; gap: 2rem; font-size: .98rem; }
     .nav a { text-decoration: none; color: var(--on-ink-muted); }
     .nav a:hover { color: var(--on-ink); }
@@ -368,12 +375,12 @@
 
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="#top" aria-label="Paystreak, back to top">
-        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <path d="M5 11.5L27 7M5 25L27 20.5" stroke="#615a4c" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <path d="M5 18.5L27 14" stroke="#c9a35a" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <a class="brand" href="#top" aria-label="Paystreak Data, back to top">
+        <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <path fill="#F6F3EC" d="M0 0L47.16 0L34.45 9L0 9ZM48 14.6L48 22L37.55 22ZM0 13L28.8 13L16.1 22L0 22ZM31.9 26L48 26L48 35L19.2 35ZM0 26L10.45 26L0 33.4ZM13.55 39L48 39L48 48L0.84 48Z"/>
+          <path fill="#C9A227" d="M48 2.83L48 11.17L0 45.17L0 36.83Z"/>
         </svg>
-        Paystreak
+        Paystreak Data
       </a>
       <nav class="nav" aria-label="Main">
         <a href="#data">What we look for</a>
